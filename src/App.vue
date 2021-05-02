@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="app" class="max-w-full h-screen max-h-screen min-h-screen bg-gray-200">
+    <nav-bar/>
+    <div class="flex flex-row h-5/6 bg-gray-100">
+      <side-bar class="w-16 flex-none"/>
+      <main class="block flex-grow">
+        <router-view/>
+      </main>
+    </div>
+    <footer 
+      class="p-3 border-t flex flex-row justify-between border-gray-500 w-full">
+      <span>Copyright © Cloudenly Limited. All Rights Reserved.</span>
+      <span>Powered by Scelloo Limited.</span>
+    </footer>
   </div>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import NavBar from '@/components/NavBar.vue'
+import SideBar from '@/components/SideBar.vue'
 
-export default {
-  name: "App",
+@Component({
   components: {
-    HelloWorld,
+    NavBar,
+    SideBar
   },
-};
+})
+export default class App extends Vue {}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  .main-body{
+    height: 80%;
+  }
 </style>

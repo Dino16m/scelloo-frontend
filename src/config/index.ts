@@ -1,1 +1,1 @@
-export  const apiUrl = process.env.NODE_ENV == 'production' ? '' : "http://localhost:7000"
+export  const apiUrl = process.env.NODE_ENV == 'production' ? ' https://scelloo.herokuapp.com' : "http://localhost:7000"

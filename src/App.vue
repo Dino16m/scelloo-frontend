@@ -12,6 +12,7 @@
       <span>Copyright © Cloudenly Limited. All Rights Reserved.</span>
       <span>Powered by Scelloo Limited.</span>
     </footer>
+    <toast/>
   </div>
 </template>
 
@@ -19,11 +20,13 @@
 import { Component, Vue } from "vue-property-decorator";
 import NavBar from '@/components/NavBar.vue'
 import SideBar from '@/components/SideBar.vue'
+import Toast from '@/components/toast.vue'
 
 @Component({
   components: {
     NavBar,
-    SideBar
+    SideBar,
+    Toast
   },
 })
 export default class App extends Vue {}

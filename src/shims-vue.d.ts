@@ -5,3 +5,10 @@ declare module "*.vue" {
 
 declare module "@heroicons/vue/solid";
 declare module "icons/*";
+declare module 'api.config'
+
+interface IToast{
+  msg: string, color: string
+}
+
+declare function toast(data: IToast)

@@ -23,15 +23,15 @@ import AccountMultiplePlusOutlineIcon from "icons/AccountMultiplePlusOutline";
 })
 export default class SideBar extends Vue {
   routes = [
-    { icon: "mdi-view-dashboard-outline", to: "/overview" },
-    { icon: "mdi-account-multiple-plus", to: "/add" },
+    { icon: "mdi-view-dashboard-outline", to: "overview" },
+    { icon: "mdi-account-multiple-plus", to: "add" },
     { icon: "mdi-cash-multiple", to: "payment" },
-    { icon: "mdi-bank-minus", to: "/" }, // this is not the icon provided in the figma file.  Embedding the svg icon from the figma file will clutter the codebase
-    { icon: "mdi-calendar-check-outline", to: "/calendar" },
-    { icon: "mdi-handshake", to: "/deal" },
-    { icon: "mdi-database", to: "/data" },
-    { icon: "mdi-calendar-clock", to: "/clock" },
-    { icon: "mdi-cog-outline", to: "/settings" },
+    { icon: "mdi-bank-minus", to: "" }, // this is not the icon provided in the figma file.  Embedding the svg icon from the figma file will clutter the codebase
+    { icon: "mdi-calendar-check-outline", to: "calendar" },
+    { icon: "mdi-handshake", to: "deal" },
+    { icon: "mdi-database", to: "data" },
+    { icon: "mdi-calendar-clock", to: "clock" },
+    { icon: "mdi-cog-outline", to: "settings" },
   ];
 }
 </script>

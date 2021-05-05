@@ -20,4 +20,11 @@ npm run build
 npm run lint
 ```
 
+## Frontend link
+
+https://dino16m.github.io/scelloo-frontend/#
+
+## Backend api link
+
+https://scelloo.herokuapp.com/
 

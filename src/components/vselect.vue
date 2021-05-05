@@ -2,7 +2,7 @@
   <div class="w-full px-3">
     <label
       class="block  tracking-wide text-gray-700 text-sm mb-2"
-      for="grid-state"
+      :for="id"
     >
       {{label}}
     </label>
@@ -11,7 +11,7 @@
         @input="$emit('input', $event.target.value)"
         :value="value"
         class="block appearance-none w-full bg-transparent border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="grid-state"
+        :id="id"
       >
         <option class="capitalize" v-for="(item, i) in keyedItems" :key="i" :value="item.value">
             {{item.text}}
@@ -47,6 +47,8 @@ export default class VSelect extends Vue {
     @Prop({required: false})
     value!: any
 
+    slug = ""
+
     get keyedItems(){
         return  this.items.map(item => {
             if(typeof item == "string"){
@@ -54,6 +56,11 @@ export default class VSelect extends Vue {
             }
             return item
         })
+    }
+
+    get id(){
+      if(!this.slug) this.slug = String(Math.random())
+      return `text-field-${this.slug}`
     }
 }
 </script>

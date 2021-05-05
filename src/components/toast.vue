@@ -44,7 +44,6 @@ export default class Toast extends Vue {
         setTimeout(() => {
             this.reset()
         }, 5000);
-        console.log("called")
     }
 
     reset(){

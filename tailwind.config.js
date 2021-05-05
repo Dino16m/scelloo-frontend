@@ -1,7 +1,12 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: { content: ["./public/**/*.html", "./src/**/*.vue"] },
+  purge: { 
+    content: ["./public/**/*.html", "./src/**/*.vue"],
+    options:{
+      safelist: ['bg-success', 'border-success', 'bg-error', 'border-error']
+    }
+  },
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -16,6 +21,8 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
 
+      success: colors.green[600],
+      error: colors.red[500],
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,

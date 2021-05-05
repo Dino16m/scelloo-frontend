@@ -77,7 +77,7 @@
   </modal>
 </template>
 <script lang="ts">
-import { Component, Prop, PropSync, Vue } from "vue-property-decorator";
+import { Component, Prop, PropSync, Vue, Watch } from "vue-property-decorator";
 import Modal from "@/components/modal.vue";
 import VSelect from "@/components/vselect.vue"
 import VInput from "@/components/vinput.vue"
@@ -244,7 +244,7 @@ export default class NewLeave extends Vue {
         this.leaveBalances[request.leaveType] -= days
         this.addRequest(request)
 
-        window.toast({msg: "Request added", color: "green-600"})
+        window.toast({msg: "Request added", color: "success"})
         this.reset()
     }
 
@@ -261,7 +261,7 @@ export default class NewLeave extends Vue {
         const timeout = 2000
         errors.forEach(error => {
             setTimeout(() => {
-                window.toast({msg: error.msg, color: "red-500"}) 
+                window.toast({msg: error.msg, color: "error"}) 
             }, timeout + 1000);
         })
     }
@@ -280,6 +280,10 @@ export default class NewLeave extends Vue {
         this.leaveBalances = leaveBalances.data.leaveBalance
     }
 
+    @Watch('show')
+    shown(){
+        if(!this.show) this.reset()
+    }
 
     async created(){
         this.getDelegatees()

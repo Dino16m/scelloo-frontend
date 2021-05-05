@@ -2,7 +2,7 @@
   <div class="px-3">
     <label
       class="block tracking-wide text-gray-700 text-sm mb-2"
-      for="text-field"
+      :for="id"
     >
       {{ label }}
     </label>
@@ -19,7 +19,7 @@
         :value="value"
         :class="{'pl-8': Boolean(icon), 'border-red-600': error, 'border-gray-200': !error}"
         class="block appearance-none  w-full bg-transparent border  text-gray-700 py-3 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="text-field"
+        :id="id"
       />
     </div>
   </div>
@@ -43,5 +43,11 @@ export default class VInput extends Vue {
     @Prop({ required: false })
     value!: any
     
+    slug = ''
+
+    get id(){
+      if(!this.slug) this.slug = String(Math.random())
+      return `select-field-${this.slug}`
+    }
 }
 </script>

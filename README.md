@@ -1,3 +1,4 @@
+![Tests](https://github.com/dino16m/scelloo-frontend/actions/workflows/main.yml/badge.svg)
 # scelloo-frontend
 
 ## Project setup
